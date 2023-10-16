@@ -3,8 +3,11 @@
 
 Raw data downloaded to:			data\UCI HAR Dataset
 
-script:			just "run_analysis.R"
-dependencies:	data folder (see relative path above)
-				dlpyr library, installed by script
+script:			
+run_analysis.R
+
+dependencies:
+- data folder (see relative path above)
+- dlpyr library, installed by script
 
 Please see CodeBook.md for information on the dataset and transformations required.
