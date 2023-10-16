@@ -51,46 +51,12 @@ https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-dat
 The following steps were taken to obtain the final tidy dataset required under Data_Cleaning/Week_4/Course_Project assignment:
 
 
-1. Merges the training and the test sets to create one data set.
-
-merged_test <- test: merge data, subject ID and activity ID
-merged_training <- training:  merge data, subject ID and activity ID
-merged_data_full <- concatenate test and trainig merged data sets
-
-2. Extracts only the measurements on the mean and standard deviation for each measurement. 
-
-features_info.txt states the following variable naming conventions are the ones we need:
-mean(): Mean value
-std(): Standard deviation
-
-mean_std_data_full <- extract only fields in features_FILTERED.txt (mean and std only)
-
-
-3. Uses descriptive activity names to name the activities in the data set
-
-update activity IDs to be labels from list below
-
-taken from activity_labels.txt:
-1 WALKING
-2 WALKING_UPSTAIRS
-3 WALKING_DOWNSTAIRS
-4 SITTING
-5 STANDING
-6 LAYING
-
-4. Appropriately labels the data set with descriptive variable names. 
-
-?
-mean(): Mean value
-std(): Standard deviation
-
-
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-average of each data field BY SUBJECT ID and ACTIVITY ID (now a LABEL)
-
-
-Subject ID			subject_XXXXX.txt, row matches to data samples
-Activity ID			y_XXXXXX.txt, row matches to data samples, names in activity_labels.txt
-Data				x_XXXXXX.txt, row matches IDs above
-
+1. load packages and set working dir
+2. load subjects, activities(y) and data(x) for both TESTing and TRAINing
+3. load activity LABELS and FEATURES
+4. set the ID col names to be decriptive and apply the features names 
+4. merge the training and testing data and then merge both into one data set
+5. merge in the activity names
+6. select out the grou key (subject and activity) with mean and std dev columns (all that match)
+7. aggreate to obtain the mean of each column by grpoup key (subject + activity)
+8. save the final tidy data set to file
